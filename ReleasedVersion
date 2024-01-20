@@ -1,8 +1,10 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolpoppyus/Roblox-Lua/master/Pop%20UI%20Lib", true))()
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 
-local ui = library:Tab("Neon.C Hub V6 [GOD]")
+local window = DrRayLibrary:Load("Neon.C Hub V6 [GOD] 🥶", "Default")
 
-ui:Button("Auto Parry V6", function()
+local tab = DrRayLibrary.newTab("🎯 Combat", "Default")
+
+tab.newButton("Auto Parry V6", "Auto Parry", function()
     local Debug = false -- Set this to true if you want my debug output.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
@@ -65,7 +67,7 @@ Balls.ChildAdded:Connect(function(Ball)
 end)
 end)
 
-ui:Button("Auto Win V6", function()
+tab.newButton("Auto Win V6", "Win every game easily!", function()
     getgenv().god = true
 while getgenv().god and task.wait() do
     for _,ball in next, workspace.Balls:GetChildren() do
@@ -82,7 +84,7 @@ while getgenv().god and task.wait() do
 end
 end)
 
-ui:Button("Auto Spam V4", function()
+tab.newButton("Auto Spam V4", "Hold block to spam insanely!", function()
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Script by Neoncat",
 	Text = "Auto Spam V4",
@@ -98,7 +100,7 @@ end
 getgenv().exeSpam = true
 end)
 
-ui:Button("Auto Detect Spam", function()
+tab.newButton("Auto Detect Spam", "Detects automatically spam!", function()
     getgenv().AutoDetectSpam = true
 
 --///////////////////////////////////////////////////////////////////--
@@ -214,10 +216,10 @@ Balls.ChildAdded:Connect(function(ball)
 end)
 end)
 
-ui:Button("Hold Block To Spam", function()
+tab.newButton("Hold Block To Spam", "Hold block to spam insanely!", function()
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Script by Neoncat",
-	Text = "Hold Block button to Spam",
+	Text = "Hold Block To Spam",
 	Duration = 5
 })
 
@@ -230,7 +232,7 @@ end
 getgenv().exeSpam = true
 end)
 
-ui:Button("Player Esp", function()
+tab.newButton("Player Esp", "Player Esp!", function()
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Script by Neoncat",
 	Text = "Player Esp",
@@ -244,4 +246,8 @@ if not getgenv().exeSpam then
 end
 
 getgenv().exeSpam = true
+end)
+
+tab.newButton("Thanks for using the Neon.C Hub V6!", "Script made by Neoncat", function()
+    print('Hello!')
 end)
