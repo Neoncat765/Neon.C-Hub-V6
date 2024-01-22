@@ -219,20 +219,7 @@ end
 getgenv().exeSpam = true
 end)
 
-tab.newButton("Player Esp", "Player Esp!", function()
-    game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Script by Neoncat",
-	Text = "Player Esp",
-	Duration = 5
-})
-
-getgenv().SpamSpeed = 5 -- 1-25
-
-if not getgenv().exeSpam then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp"))();
-end
-
-getgenv().exeSpam = true
+tab.newButton("Player Esp", "Player Esp!", function()	loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp"))();
 end)
 
 tab.newButton("Thanks for using the Neon.C Hub V6!", "Script made by Neoncat", function()
